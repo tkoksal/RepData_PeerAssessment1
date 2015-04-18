@@ -192,7 +192,7 @@ hour <- floor(activity$interval/100)
 minute <- activity$interval%%100
 
 # Combining these two parts with a ":" in between, which in turn will facilitate to time conversion
-hourmin <- paste(paste(hour, ":", sep = ""), minute, sep = "")
+hourmin <- paste(hour, ":", minute, sep = "")
 
 # Copy data frame into 'activity1' and create hour-minute variable of character format
 activity1 <- activity
@@ -271,12 +271,12 @@ head(activity2)
 ## 5    0:20 0.0754717 2012-10-31 02:00:00       20      0:20
 ## 6    0:25 2.0943396 2012-10-31 02:00:00       25      0:25
 ##             interval2
-## 1 2015-02-05 00:00:00
-## 2 2015-02-05 00:05:00
-## 3 2015-02-05 00:10:00
-## 4 2015-02-05 00:15:00
-## 5 2015-02-05 00:20:00
-## 6 2015-02-05 00:25:00
+## 1 2015-04-18 00:00:00
+## 2 2015-04-18 00:05:00
+## 3 2015-04-18 00:10:00
+## 4 2015-04-18 00:15:00
+## 5 2015-04-18 00:20:00
+## 6 2015-04-18 00:25:00
 ```
 
 It should be noted that the newly created 'activity2' time format variable has also been assigned a date information, which is the date/day when the code was run.
@@ -311,7 +311,7 @@ filter(activity2, steps == max(steps))
 
 ```
 ##      steps                date interval interval1           interval2
-## 1 206.1698 2012-10-31 02:00:00      835      8:35 2015-02-05 08:35:00
+## 1 206.1698 2012-10-31 02:00:00      835      8:35 2015-04-18 08:35:00
 ```
 
 So, it is 8:35 when the average number of steps makes a peak with a value of 206.17.
@@ -381,7 +381,7 @@ str(activity2)
 ##  $ date     : POSIXct, format: "2012-10-31 02:00:00" "2012-10-31 02:00:00" ...
 ##  $ interval : num  0 5 10 15 20 25 30 35 40 45 ...
 ##  $ interval1: chr  "0:0" "0:5" "0:10" "0:15" ...
-##  $ interval2: POSIXct, format: "2015-02-05 00:00:00" "2015-02-05 00:05:00" ...
+##  $ interval2: POSIXct, format: "2015-04-18 00:00:00" "2015-04-18 00:05:00" ...
 ```
 
 Let's first extract average daily activity patterns from 'activity2' and assign it to a new dataset 'avg.daily.act'
@@ -599,12 +599,12 @@ head(activity4)
 ## 5              NA 0.0754717 0.09895178 2012-10-31 02:20:00      NA
 ## 6              NA 2.0943396 1.59035639 2012-10-31 02:25:00      NA
 ##   whatday1 interval2           interval3 whatday2
-## 1       NA       0:0 2015-02-05 00:00:00  weekday
-## 2       NA       0:5 2015-02-05 00:05:00  weekday
-## 3       NA      0:10 2015-02-05 00:10:00  weekday
-## 4       NA      0:15 2015-02-05 00:15:00  weekday
-## 5       NA      0:20 2015-02-05 00:20:00  weekday
-## 6       NA      0:25 2015-02-05 00:25:00  weekday
+## 1       NA       0:0 2015-04-18 00:00:00  weekday
+## 2       NA       0:5 2015-04-18 00:05:00  weekday
+## 3       NA      0:10 2015-04-18 00:10:00  weekday
+## 4       NA      0:15 2015-04-18 00:15:00  weekday
+## 5       NA      0:20 2015-04-18 00:20:00  weekday
+## 6       NA      0:25 2015-04-18 00:25:00  weekday
 ```
 
 ```r
@@ -626,7 +626,7 @@ str(activity4)
 ##  $ whatday        : num  NA NA NA NA NA NA NA NA NA NA ...
 ##  $ whatday1       : num  NA NA NA NA NA NA NA NA NA NA ...
 ##  $ interval2      : chr  "0:0" "0:5" "0:10" "0:15" ...
-##  $ interval3      : POSIXct, format: "2015-02-05 00:00:00" "2015-02-05 00:05:00" ...
+##  $ interval3      : POSIXct, format: "2015-04-18 00:00:00" "2015-04-18 00:05:00" ...
 ##  $ whatday2       : Factor w/ 2 levels "weekday","weekend": 1 1 1 1 1 1 1 1 1 1 ...
 ```
 

@@ -112,7 +112,7 @@ hour <- floor(activity$interval/100)
 minute <- activity$interval%%100
 
 # Combining these two parts with a ":" in between, which in turn will facilitate to time conversion
-hourmin <- paste(paste(hour, ":", sep = ""), minute, sep = "")
+hourmin <- paste(hour, ":", minute, sep = "")
 
 # Copy data frame into 'activity1' and create hour-minute variable of character format
 activity1 <- activity
