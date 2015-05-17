@@ -319,13 +319,13 @@ str(activity4)
 select(activity4, whatday2, interval3, isteps)
 ```
 
-```{r}
-par(mfrow = c(1,2))
+```{r, fig.height=8}
+par(mfrow = c(2,1))
 library(dplyr)
 with(filter(activity4, whatday2 == "weekday"), 
      plot(interval3, isteps, type = "l", col = "steelblue",
      main = "Weekdays",
-     xlab = "Time (hour:minute)", 
+     xlab = "", 
      ylab = "Average Number of Steps", ylim = c(0, 250)))
 
 with(filter(activity4, whatday2 == "weekend"), 
